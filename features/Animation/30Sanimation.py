@@ -28,5 +28,35 @@ def changeSize(w,h):
 
 def reSize(w,h):
     glViewport(0,0,w,h)#设置机口
+    glMatrixMode(GL_PROJECTION)  # 指定哪一个矩阵时当前矩阵
+    glLoadIdentity()
+    gluPerspective(60.0, w / h, 1.0, 20)  # 创建透视投影矩阵
+    glMatrixMode(GL_MODELVIEW)
+    glLoadIdentity()
+    gluLookAt(0, 5, 5, 0, 0, 0, 0, 1, 0)
+
+rotate_Y = 1
+
+def drawFunc():
+    glMatrixMode(GL_MODELVIEW)
+    glLoadIdentity()
+    glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT)
+    global rotate_Y
+    rotate_Y = rotate_Y + 0.1
+    glPushMatrix()
+    glTranslate(0, 0, -3)  # 绘图函数，移动当前绘图原点
+    glRotate(rotate_Y, 0, 1, 0)  # 是一个旋转矩阵乘以当前矩阵
+    glMaterialfv(GL_BACK, GL_DIFFUSE, [1.0, 1.0, 1.0, 1.0])  # 指定用于光照计算的当前材质属性
+    # glMaterialfv(GL_FRONT, GL_AMBIENT, mat_specular)
+    glutSolidTeapot(0.5)
+    glutSolidSphere(1, 10, 8)
+    glPopMatrix()
+    glFlush()
+
+def display():
+    glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT)
+    glColor3f(1.0, 1.0, 1.0)
+
+    glPushMatrix()
 
 
