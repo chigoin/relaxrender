@@ -67,6 +67,17 @@ def display():
     # glTranslatef(3, 0, 0)
     # glRotatef(0, 0, 1, 0)
 
-   # glMaterialfv(GL_BACK,
+   # glMaterialfv(GL_BACK, GL_DIFFUSE, [1.0, 1.0, 1.0, 1.0])
+    glPopMatrix()
+   # glutSwapBuffers()
+    glFlush()
+
+
+glutInit()#固定格式
+glutInitDisplayMode(GLUT_SINGLE | GLUT_RGBA | GLUT_DEPTH)#缓存模式
+glutInitWindowSize(400, 400)#显示框大小
+glutInitWindowPosition(100, 100)#确定显示框左上角的位置
+glutCreateWindow("30s animation")
+
 
 
