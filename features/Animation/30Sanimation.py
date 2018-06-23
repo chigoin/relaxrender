@@ -79,17 +79,5 @@ glutInitWindowSize(400, 400)#显示框大小
 glutInitWindowPosition(100, 100)#确定显示框左上角的位置
 glutCreateWindow("30s animation")
 
-init()
-glutDisplayFunc(drawFunc)#执行显示
-glutReshapeFunc(changeSize)
-glutIdleFunc(drawFunc)#循环显示
-
-# glutDisplayFunc(display)#执行显示
-# glutReshapeFunc(reSize)
-# glutIdleFunc(display)
-
-glutMainLoop()#进入glut时间处理循环
-
-
 
 
