@@ -58,5 +58,15 @@ def display():
     glColor3f(1.0, 1.0, 1.0)
 
     glPushMatrix()
+     glPushMatrix()
+    #glTranslate(0, 0, -3)#绘图函数，移动当前绘图原点
+    glutWireSphere(1, 20, 16)
+    # glRotatef(0, 0, 1, 0 GL_DIFFUSE, [1.0, 1.0, 1.0, 1.0])
+    glPopMatrix()
+   # glutSwapBuffers())
+    # glTranslatef(3, 0, 0)
+    # glRotatef(0, 0, 1, 0)
+
+   # glMaterialfv(GL_BACK,
 
 
